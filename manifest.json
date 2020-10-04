@@ -1,0 +1,20 @@
+{
+    "manifest_version": 2,
+    "name": "Text to Speech",
+    "version": "0.2",
+    "background": {
+        "scripts": ["background.min.js"]
+    },
+    "content_scripts": [{
+        "matches": ["http://*/*", "https://*/*"],
+        "js": ["polyfill.min.js", "ext.min.js"],
+        "run_at": "document_end"
+    }],
+    "browser_action": {
+        "default_icon": "speech.png"
+    },
+    "permissions": [
+        "activeTab",
+        "clipboardRead"
+    ]
+}
